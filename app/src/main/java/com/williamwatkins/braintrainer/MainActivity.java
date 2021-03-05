@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> answers = new ArrayList<Integer>();
     int locationOfCorrectAnswer;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
 
         newQuestion();
-
-
-
     }
 
 
@@ -69,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
         newQuestion();
 
-
         new CountDownTimer(3100, 1000){
 
             @Override
@@ -78,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 timerTextView =findViewById(R.id.timerTextView);
 
                 timerTextView.setText(String.valueOf(millisUntilFinished / 1000) + "s");
-
             }
 
             @Override
@@ -88,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 timerTextView.setText("0s");
                 startButton.setText("Play again?");
                 startButton.setVisibility(View.VISIBLE);
-
-
             }
         }.start();
     }
@@ -102,12 +94,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             resultTextView.setText("Wrong!");
         }
-
         noOfQuestions++;
         scoreTextView.setText(String.format("%d/%d", score, noOfQuestions));
 
         newQuestion();
-
     }
 
     public void newQuestion(){
@@ -140,6 +130,4 @@ public class MainActivity extends AppCompatActivity {
         button3.setText(Integer.toString(answers.get(2)));
         button4.setText(Integer.toString(answers.get(3)));
     }
-
-
 }
